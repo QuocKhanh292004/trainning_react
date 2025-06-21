@@ -40,7 +40,7 @@ export default function ReviewSlider() {
     <div
       className="relative bg-cover bg-center text-white py-24 px-6 text-center"
       style={{
-        backgroundImage: `url('/your-background.jpg')`, // Replace with your actual image path
+        backgroundImage: `url('https://preview.wolfthemes.store/app/uploads/sites/31/2019/10/t-bg.png')`,
       }}
     >
       <h2 className="text-4xl md:text-5xl font-bold italic opacity-80">

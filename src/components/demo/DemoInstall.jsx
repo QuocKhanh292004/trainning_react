@@ -53,7 +53,7 @@ function DemoInstall() {
                 {index !== steps.length - 1 && (
                   <div
                     className="w-px flex-grow bg-white"
-                    style={{ height: "80px" }}
+                    style={{ height: "0px" }}
                   ></div>
                 )}
               </div>

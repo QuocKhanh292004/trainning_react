@@ -6,14 +6,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import BackGround from "../../assets/images/BackGround.jpg";
 
-console.log("backgroud", BackGround);
-console.log("typeof BackGround:", typeof BackGround);
-
 function Describe() {
   return (
     <div
       className="relative w-full h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${BackGround})`, backgroundColor: "red" }}
+      style={{ backgroundImage: `url(${BackGround})` }}
     >
       {/* Overlay mờ trắng */}
       <div className="absolute inset-0 bg-opacity-60 flex items-center pl-36">
