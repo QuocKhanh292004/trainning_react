@@ -3,7 +3,7 @@ import Header from "../../components/header";
 import Content from "../../components/content";
 import Footer from "../../components/footer";
 
-function DefaultLayout({ children }) {
+function DefaultLayout() {
   return (
     <div>
       <div>
@@ -15,9 +15,6 @@ function DefaultLayout({ children }) {
       <div>
         <Footer></Footer>
       </div>
-
-      <h1>xinb xzchgao</h1>
-      <div>{children}</div>
     </div>
   );
 }
