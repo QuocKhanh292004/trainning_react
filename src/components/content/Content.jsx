@@ -10,6 +10,7 @@ import ShopShowcase from "../shopShowcase";
 import InnerTemplates from "../templates/InnerTemplates";
 import FeaturesGrid from "../Features";
 import ReviewSlider from "../reviewSlider";
+import PremiumPluginsSection from "../../premium";
 function Content() {
   return (
     <div className="content">
@@ -39,7 +40,6 @@ function Content() {
         <ShopShowcase></ShopShowcase>
       </div>
       <div>
-        {" "}
         <InnerTemplates></InnerTemplates>
       </div>
       <div>
@@ -48,6 +48,7 @@ function Content() {
       <div>
         <ReviewSlider></ReviewSlider>
       </div>
+      <PremiumPluginsSection></PremiumPluginsSection>
     </div>
   );
 }

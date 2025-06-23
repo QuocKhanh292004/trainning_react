@@ -4,7 +4,6 @@ function EasyToUse() {
   return (
     <div className="bg-black text-white py-20 px-6 md:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Left - Image */}
         <div className="flex justify-center">
           <img
             src="https://preview.wolfthemes.store/app/uploads/sites/31/2019/11/admin-1.png"
@@ -13,7 +12,6 @@ function EasyToUse() {
           />
         </div>
 
-        {/* Right - Text Content */}
         <div className="text-left">
           <h2 className="text-5xl font-pacifico text-gray-400 mb-2">
             Easy To Use
