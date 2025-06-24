@@ -10,9 +10,10 @@ import ShopShowcase from "../shopShowcase";
 import InnerTemplates from "../templates/InnerTemplates";
 import FeaturesGrid from "../Features";
 import ReviewSlider from "../reviewSlider";
+import PremiumPluginsSection from "../../premium";
 function Content() {
   return (
-    <div className="content">
+    <div>
       <div>
         <Describe></Describe>
       </div>
@@ -23,8 +24,7 @@ function Content() {
         <Integration></Integration>
       </div>
       <div>
-        {" "}
-        <Discography></Discography>{" "}
+        <Discography></Discography>
       </div>
       <div>
         <DemoInstall></DemoInstall>
@@ -39,7 +39,6 @@ function Content() {
         <ShopShowcase></ShopShowcase>
       </div>
       <div>
-        {" "}
         <InnerTemplates></InnerTemplates>
       </div>
       <div>
@@ -48,6 +47,7 @@ function Content() {
       <div>
         <ReviewSlider></ReviewSlider>
       </div>
+      <PremiumPluginsSection></PremiumPluginsSection>
     </div>
   );
 }

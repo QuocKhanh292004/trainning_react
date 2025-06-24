@@ -1,25 +1,23 @@
-import React from "react";
-import Header from "../../components/header";
-import Content from "../../components/content";
-import Footer from "../../components/footer";
+// layout toàn trang
+import React from 'react';
+import Header from '../../components/header';
+import Content from '../../components/content';
+import Footer from '../../components/footer';
 
-function DefaultLayout({ children }) {
-  return (
-    <div>
-      <div>
-        <Header></Header>
-      </div>
-      <div>
-        <Content></Content>
-      </div>
-      <div>
-        <Footer></Footer>
-      </div>
-
-      <h1>xinb xzchgao</h1>
-      <div>{children}</div>
-    </div>
-  );
+function DefaultLayout() {
+    return (
+        <div>
+            <div>
+                <Header></Header>
+            </div>
+            <div>
+                <Content></Content>
+            </div>
+            <div>
+                <Footer></Footer>
+            </div>
+        </div>
+    );
 }
 
 export default DefaultLayout;
