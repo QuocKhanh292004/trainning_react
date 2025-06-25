@@ -1,18 +1,22 @@
+// TemplateCard.jsx
 import React from "react";
+import { motion } from "framer-motion";
 
 function TemplateCard({ image, title, link }) {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block group"
-    >
-      <div className="rounded overflow-hidden shadow-lg transform group-hover:scale-105 transition-all duration-300">
+      <motion.a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block overflow-hidden rounded shadow-md hover:shadow-xl transition-shadow duration-300"
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+          }}
+      >
         <img src={image} alt={title} className="w-full h-auto" />
-      </div>
-      <p className="text-center mt-3 text-gray-800 font-medium">{title}</p>
-    </a>
+        <div className="p-4 font-oswald font-bold text-center">{title}</div>
+      </motion.a>
   );
 }
 
