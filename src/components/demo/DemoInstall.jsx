@@ -1,5 +1,6 @@
 import React from "react";
 import { FaMouse, FaDownload, FaHeart } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -32,9 +33,18 @@ function DemoInstall() {
             It is the cool way to set up your theme in a couple of minutes from
             this starting point.
           </p>
-          <button className="mt-8 px-6 py-3 bg-[#f92663] hover:bg-[#e71f56] transition text-white font-bold text-sm uppercase">
-            Get Your Copy
-          </button>
+          {/*<button className="mt-8 px-6 py-3 bg-[#f92663] hover:bg-[#e71f56] transition text-white font-bold text-sm uppercase">*/}
+          {/*  Get Your Copy*/}
+          {/*</button>*/}
+          <motion.button
+              className="mt-8 px-6 py-3 bg-[#f92663] hover:bg-[#e71f56] transition text-white font-bold text-sm uppercase rounded-lg "
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            VIEW DEMOS
+          </motion.button>
         </div>
 
         {/* Right Timeline */}
