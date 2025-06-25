@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TemplateCard from "../templates/TemplateCard";
 import MoreText from "./MoreText";
+import { motion } from "framer-motion";
 
 const releaseSinglePages = [
   {
@@ -88,64 +89,106 @@ const releaseListing = [
 
 function Discography() {
   const [activeTab, setActiveTab] = useState("single");
-
   const data = activeTab === "single" ? releaseSinglePages : releaseListing;
 
   return (
-    <div className="py-16 px-6 md:px-20 bg-white text-center">
-      <h2 className="text-5xl font-pacifico text-gray-500">Discography</h2>
-      <h3 className="text-2xl font-oswald font-bold mt-2 uppercase">
-        Release Pages
-      </h3>
-
-      <p className="mt-4 text-gray-500 max-w-3xl mx-auto text-sm md:text-base">
-        Single release pages don’t have to be boring and all the same! You can
-        use a different layout for each release, and use the page builder
-        template system if you want all release pages with the same custom
-        layout.
-      </p>
-
-      {/* Tabs */}
-      <div className="flex justify-center mt-10 border-b border-gray-300 mb-10">
-        <button
-          onClick={() => setActiveTab("single")}
-          className={`px-6 py-2 font-bold text-sm uppercase border-b-2 transition-all duration-300 ${
-            activeTab === "single"
-              ? "border-black text-black"
-              : "border-transparent text-gray-400 hover:text-black"
-          }`}
+      <div className="py-16 px-6 md:px-20 bg-white text-center">
+        <motion.h2
+            className="text-5xl font-pacifico text-gray-500"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
         >
-          Release Single Pages
-        </button>
-        <button
-          onClick={() => setActiveTab("listing")}
-          className={`px-6 py-2 font-bold text-sm uppercase border-b-2 transition-all duration-300 ${
-            activeTab === "listing"
-              ? "border-black text-black"
-              : "border-transparent text-gray-400 hover:text-black"
-          }`}
-        >
-          Release Listing
-        </button>
-      </div>
+          Discography
+        </motion.h2>
 
-      {/* Grid list */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {data.map((item, index) => (
-          <TemplateCard
-            key={index}
-            image={item.image}
-            title={item.title}
-            link={item.link}
-          />
-        ))}
-        {/* MoreText nằm trong grid luôn */}
-        <div className="flex items-center justify-center h-full">
-          <MoreText />
+        <motion.h3
+            className="text-2xl font-oswald font-bold mt-2 uppercase"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+        >
+          Release Pages
+        </motion.h3>
+
+        <motion.p
+            className="mt-4 text-gray-500 max-w-3xl mx-auto text-sm md:text-base"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+        >
+          Single release pages don’t have to be boring and all the same! You can
+          use a different layout for each release, and use the page builder
+          template system if you want all release pages with the same custom
+          layout.
+        </motion.p>
+
+        {/* Tabs */}
+        <div className="flex justify-center mt-10 border-b border-gray-300 mb-10">
+          <button
+              onClick={() => setActiveTab("single")}
+              className={`px-6 py-2 font-bold text-sm uppercase border-b-2 transition-all duration-300 ${
+                  activeTab === "single"
+                      ? "border-black text-black"
+                      : "border-transparent text-gray-400 hover:text-black"
+              }`}
+          >
+            Release Single Pages
+          </button>
+          <button
+              onClick={() => setActiveTab("listing")}
+              className={`px-6 py-2 font-bold text-sm uppercase border-b-2 transition-all duration-300 ${
+                  activeTab === "listing"
+                      ? "border-black text-black"
+                      : "border-transparent text-gray-400 hover:text-black"
+              }`}
+          >
+            Release Listing
+          </button>
         </div>
+
+        {/* Grid list */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {data.map((item, index) => (
+              <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <TemplateCard
+                    image={item.image}
+                    title={item.title}
+                    link={item.link}
+                />
+              </motion.div>
+          ))}
+
+          <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: data.length * 0.1 }}
+              className="flex items-center justify-center h-full"
+          >
+            <MoreText />
+          </motion.div>
+        </div>
+
+        <motion.div
+            className="mt-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: data.length * 0.1 + 0.3 }}
+            viewport={{ once: true }}
+        >
+          and more....
+        </motion.div>
       </div>
-      <div className="mt-20"> and more....</div>
-    </div>
   );
 }
 
